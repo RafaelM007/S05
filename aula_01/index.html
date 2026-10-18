@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Moreira</title>
+     <style>
+        h1{
+            color: #004080;
+        }
+        #profissao {
+            color: #DAA520;
+        }
+        .competencias {
+            color: #32CD33;
+        }
+        li.destaque {
+            color: #B22222;
+        }
+        li[target="_blank"] {
+            color: #DAA520;
+        }
+    </style> 
+</head>
+<body>
+    <h1>Rafael Moreira</h1>
+    <h2 id="profissao">Engenheiro de Software</h2>
+    <a href="https://www.inatel.br" target="_blank"><p>linkedin</p></a>
+    <h3 class="competencias">Competências</h3>
+    <ul class="lista">
+        <li class="destaque">HTML</li>
+        <li target="_blank">CSS</li>
+        <li>JS</li>
+    </ul>
+    <div><p>WhatsApp</p></div>
+    <div onclick="enviarEmail()">Email</div>
+    <p id="msm"></p>
+
+    <script>
+        function enviarEmail() {
+            document.getElementById("msm").innerText = "Mensagem enviada";
+            document.getElementById("msm").style.color = "Blue";
+
+            let lista = document.querySelector(".lista");
+            let novoItem = document.createElement("li");
+            novoItem.textContent = "Framework";
+            novoItem.classList.add("destaque");
+            lista.appendChild(novoItem);
+        }
+
+        document.getElementById("msm").addEventListener("click", function() {
+            document.getElementById("profissao").style.color = "Red";
+        });
+    </script>
+        
+
+</body>
+</html>
